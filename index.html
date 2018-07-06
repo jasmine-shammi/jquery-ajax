@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Database</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+      $(document).ready( function() {
+		$("#somebutton").click(function() {
+			var info =	$('#un1').val();
+			var i;
+					$.post("Client1",{un1 : info},function(status){ //(servlet,data,callback)
+					$("#somediv").html(status);
+                });
+            });
+		});
+        </script>
+<center>
+<body>
+  Command:
+  <input type="text" name="command" size="100" id="un1">
+  <br>
+  <br>
+  <input type="button" value="getData" id="somebutton"></button>
+        <div id="somediv"></div>
+</body>
+</center>
+</html>
